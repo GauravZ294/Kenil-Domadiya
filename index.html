@@ -3,9 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Portfolio Layout</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <title>Projects</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
   <style>
     body {
@@ -16,7 +15,6 @@
       scroll-behavior: smooth;
     }
 
-    /* Navbar */
     header {
       display: flex;
       flex-wrap: wrap;
@@ -35,6 +33,11 @@
       font-weight: bold;
       flex: 1;
       text-align: left;
+    }
+    
+    .log a{
+      color:black;
+      text-decoration: none;
     }
 
     .menu {
@@ -56,16 +59,15 @@
 
     .social-icons a {
       margin: 0 8px;
-      text-decoration: none;
       font-size: 20px;
-      transition: color 0.3s ease;
+      text-decoration: none;
     }
 
     .social-icons a .fa-facebook { color: #1877f2; }
     .social-icons a .fa-instagram { color: #e1306c; }
     .social-icons a .fa-linkedin-in { color: #0a66c2; }
 
-    /* Gallery */
+     /* Gallery */
     .gallery {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -141,7 +143,6 @@
       margin: 0 10px;
       font-size: 22px;
       color: grey;
-      transition: color 0.3s ease;
     }
 
     .footer-icons a:hover .fa-behance { color: #1769ff; }
@@ -178,125 +179,23 @@
       background-color: #ccc;
     }
 
-     /* Mobile menu icon */
-    .mobile-menu-icon {
-      display: none;
-      font-size: 24px;
-      cursor: pointer;
-      position: absolute;
-      top: 20px;
-      right: 20px;
-      z-index: 1100;
-    }
-
-    /* Flyout menu */
-    .mobile-flyout {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100vh;
-      background: white;
-      z-index: 2000;
-      display: none;
-      flex-direction: column;
-      justify-content: space-between;
-      padding: 20px;
-    }
-
-    .flyout-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .close-icon {
-      font-size: 26px;
-      cursor: pointer;
-      color: red; /* Ensure it's visible on white background */
-    }
-
-    .close-icon:hover {
-      color: #666; /* Optional hover effect */
-    }
-
-    .flyout-menu {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      flex: 1;
-      gap: 30px;
-    }
-
-   .flyout-menu a {
-      font-size: 24px;
-      color: black;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    .flyout-social {
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      padding-bottom: 30px;
-    }
-
-    .flyout-social a {
-      font-size: 26px;
-        .fa-behance { color: #1769ff; }
-        .fa-linkedin-in { color: #0a66c2; }
-        .fa-facebook { color: #1877f2; }
-        .fa-instagram { color: #e1306c; }
-    }
-
-    /* Show hamburger icon on mobile */
     @media (max-width: 768px) {
-      .mobile-menu-icon {
-        display: block;
-      }
-
-      .menu,
-      .social-icons {
+      .menu, .social-icons {
         display: none;
       }
-    }
-
-
-    @media (max-width: 1024px) {
-      .gallery {
-        grid-template-columns: repeat(2, 1fr);
+      .project-card img {
+        height: 200px;
       }
     }
-
-    @media (max-width: 768px) {
-      header {
-        flex-direction: column;
-        align-items: flex-start;
-        text-align: left;
-      }
-
-      .menu, .social-icons {
-        width: 100%;
-        text-align: center;
-        margin-top: 10px;
-      }
-
-      .gallery {
-        grid-template-columns: 1fr;
-      }
-    }
-
   </style>
 </head>
 <body>
 
   <!-- Header -->
   <header>
-    <div class="logo">Gaurav Zalavadiya</div>
+    <div class="logo"><a href="./index.html">Gaurav Zalavadiya</a></div>
     <nav class="menu">
-      <a href="#">Work</a>
+      <a href="./index.html">Work</a>
       <a href="#">Contact</a>
       <a href="#">About</a>
     </nav>
@@ -305,76 +204,98 @@
       <a href="#"><i class="fab fa-instagram"></i></a>
       <a href="#"><i class="fab fa-linkedin-in"></i></a>
     </div>
+  </header>
 
-   <!-- Mobile Menu Icon (only visible on mobile) -->
-  <div class="mobile-menu-icon" id="openMenu">
-    <i class="fas fa-bars"></i>
-  </div>
-
-
-  <!-- Fullscreen Flyover Menu -->
-  <div class="mobile-flyout" id="mobileFlyout">
-    <div class="flyout-header">
-      <div class="logo">Gaurav Zalavadiya</div>
-      <div class="close-icon" id="closeMenu"><i class="fa-solid fa-xmark-large"></i></div>
-    </div>
-    <div class="flyout-menu">
-      <a href="#">Work</a>
-      <a href="#">Contact</a>
-      <a href="#">About</a>
-    </div>
-    <div class="flyout-social">
-      <a href="#"><i class="fab fa-facebook"></i></a>
-      <a href="#"><i class="fab fa-instagram"></i></a>
-      <a href="#"><i class="fab fa-linkedin-in"></i></a>
-    </div>
-  </div>
-
-</header>
-
-
-  <!-- Gallery -->
+  <!-- Projects -->
   <div class="gallery">
-    <!-- Row 1 -->
     <div class="gallery-item">
-      <img src="./118950-2560x1600-desktop-hd-avengers-wallpaper.jpg" alt="Image 1" />
-      <div class="overlay"><h2>Rawasi - Graduation Project</h2><p>2024</p></div>
-    </div>
-    <div class="gallery-item">
-      <img src="./32439-2560x1600-desktop-hd-avengers-wallpaper.jpg" alt="Image 2" />
-      <div class="overlay"><h2>Urban Plaza</h2><p>2023</p></div>
-    </div>
-    <div class="gallery-item">
-      <img src="./119740-2880x1800-desktop-hd-avengers-background-photo.jpg" alt="Image 3" />
-      <div class="overlay"><h2>Landscape Vision</h2><p>2022</p></div>
+      <a href="project-details.html?img=118950-2560x1600-desktop-hd-avengers-wallpaper.jpg" class="project-card">
+      <img src="118950-2560x1600-desktop-hd-avengers-wallpaper.jpg" alt="Project 1">
+      <div class="overlay">
+        <h2>Project 1</h2>
+        <p>New York, NY</p>
+      </div>
+      </a>
     </div>
 
-    <!-- Row 2 -->
-    <div class="gallery-item">
-      <img src="./119834-3840x2160-desktop-4k-avengers-background-photo.jpg"" alt="Image 4" />
-      <div class="overlay"><h2>Eco Housing</h2><p>2021</p></div>
-    </div>
-    <div class="gallery-item">
-      <img src="./119844-3840x2160-desktop-4k-avengers-background.jpg" alt="Image 5" />
-      <div class="overlay"><h2>Community Park</h2><p>2020</p></div>
-    </div>
-    <div class="gallery-item">
-      <img src="./119930-3840x2160-desktop-4k-avengers-wallpaper-image.jpg" alt="Image 6" />
-      <div class="overlay"><h2>Historic Redesign</h2><p>2019</p></div>
+     <div class="gallery-item">
+      <a href="project-details.html?img=32439-2560x1600-desktop-hd-avengers-wallpaper.jpg" class="project-card">
+      <img src="32439-2560x1600-desktop-hd-avengers-wallpaper.jpg" alt="Project 2">
+      <div class="overlay">
+        <h2>Project 2</h2>
+        <p>Los Angeles, CA</p>
+      </div>
+      </a>
     </div>
 
-    <!-- Row 3 -->
     <div class="gallery-item">
-      <img src="./119968-3456x2160-desktop-hd-avengers-background.jpg" alt="Image 7" />
-      <div class="overlay"><h2>Waterfront Project</h2><p>2018</p></div>
+      <a href="project-details.html?img=119740-2880x1800-desktop-hd-avengers-background-photo.jpg" class="project-card">
+      <img src="119740-2880x1800-desktop-hd-avengers-background-photo.jpg" alt="Project 3">
+      <div class="overlay">
+        <h2>Project 3</h2>
+        <p>Chicago, IL</p>
+      </div>
+      </a>
     </div>
+
     <div class="gallery-item">
-      <img src="./32492-3840x2160-desktop-4k-avengers-wallpaper-photo.jpg" alt="Image 8" />
-      <div class="overlay"><h2>Smart City</h2><p>2017</p></div>
+      <a href="project-details.html?img=119834-3840x2160-desktop-4k-avengers-background-photo.jpg" class="project-card">
+      <img src="119834-3840x2160-desktop-4k-avengers-background-photo.jpg" alt="Project 4">
+      <div class="overlay">
+        <h2>Project 4</h2>
+        <p>Boston, MA</p>
+      </div>
+      </a>
     </div>
+
     <div class="gallery-item">
-      <img src="./32399-3840x2160-desktop-4k-avengers-wallpaper.jpg" alt="Image 9" />
-      <div class="overlay"><h2>Art Pavilion</h2><p>2016</p></div>
+      <a href="project-details.html?img=119844-3840x2160-desktop-4k-avengers-background.jpg" class="project-card">
+      <img src="119844-3840x2160-desktop-4k-avengers-background.jpg" alt="Project 5">
+      <div class="overlay">
+        <h2>Project 5</h2>
+        <p>Miami, FL</p>
+      </div>
+      </a>
+    </div>
+
+    <div class="gallery-item">
+      <a href="project-details.html?img=119930-3840x2160-desktop-4k-avengers-wallpaper-image.jpg" class="project-card">
+      <img src="119930-3840x2160-desktop-4k-avengers-wallpaper-image.jpg" alt="Project 6">
+      <div class="overlay">
+        <h2>Project 6</h2>
+        <p>Seattle, WA</p>
+      </div>
+      </a>
+    </div>
+
+    <div class="gallery-item">
+      <a href="project-details.html?img=119968-3456x2160-desktop-hd-avengers-background.jpg" class="project-card">
+      <img src="119968-3456x2160-desktop-hd-avengers-background.jpg" alt="Project 7">
+      <div class="overlay">
+        <h2>Project 7</h2>
+        <p>Toronto, CA</p>
+      </div>
+      </a>
+    </div>
+
+     <div class="gallery-item">
+      <a href="project-details.html?img=32492-3840x2160-desktop-4k-avengers-wallpaper-photo.jpg" class="project-card">
+      <img src="32492-3840x2160-desktop-4k-avengers-wallpaper-photo.jpg" alt="Project 8">
+      <div class="overlay">
+        <h2>Project 8</h2>
+        <p>San Diego, CA</p>
+      </div>
+      </a>
+    </div>
+
+    <div class="gallery-item">
+      <a href="project-details.html?img=32399-3840x2160-desktop-4k-avengers-wallpaper.jpg" class="project-card">
+      <img src="32399-3840x2160-desktop-4k-avengers-wallpaper.jpg" alt="Project 9">
+      <div class="overlay">
+        <h2>Project 9</h2>
+        <p>Burnaby, Canada</p>
+      </div>
+      </a>
     </div>
   </div>
 
@@ -393,39 +314,15 @@
   <button id="backToTop" title="Back to Top"><i class="fas fa-arrow-up"></i></button>
 
   <script>
-    const backToTop = document.getElementById("backToTop");
-
-    window.onscroll = () => {
-      backToTop.style.display = window.scrollY > 200 ? "block" : "none";
-    };
-
-    backToTop.onclick = () => {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    };
-
-  window.addEventListener("DOMContentLoaded", () => {
-    const openMenu = document.getElementById("openMenu");
-    const closeMenu = document.getElementById("closeMenu");
-    const flyout = document.getElementById("mobileFlyout");
-
-    openMenu.addEventListener("click", () => {
-      flyout.style.display = "flex";
+    window.addEventListener("DOMContentLoaded", () => {
+      const backToTop = document.getElementById("backToTop");
+      window.onscroll = () => {
+        backToTop.style.display = window.scrollY > 200 ? "block" : "none";
+      };
+      backToTop.onclick = () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      };
     });
-
-    closeMenu.addEventListener("click", () => {
-      flyout.style.display = "none";
-    });
-
-    // Existing Back to Top script
-    const backToTop = document.getElementById("backToTop");
-    window.onscroll = () => {
-      backToTop.style.display = window.scrollY > 200 ? "block" : "none";
-    };
-    backToTop.onclick = () => {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    };
-  });
-
   </script>
 
 </body>
