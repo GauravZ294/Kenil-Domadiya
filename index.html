@@ -187,6 +187,30 @@
         height: 200px;
       }
     }
+
+     @media (max-width: 1024px) {
+      .gallery {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+        text-align: left;
+      }
+
+      .menu, .social-icons {
+        width: 100%;
+        text-align: center;
+        margin-top: 10px;
+      }
+
+      .gallery {
+        grid-template-columns: 1fr;
+      }
+    }
   </style>
 </head>
 <body>
